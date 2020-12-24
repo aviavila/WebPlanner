@@ -63,14 +63,48 @@ public class rightToolBar {
 
     }
 
-        @Test
-        public void test() throws Exception {
+    @Test
+    public void myweding() throws Exception {
             driver.findElement(By.className("myWeddingIcons")).click();
-            driver.findElement(By.className("missonsicon")).click();
+           
 
 
         }
 
+    @Test
+    public void mission() throws Exception {
+            driver.findElement(By.className("missonsicon")).click();
+    }
+
+    @Test
+    public void invitemanagment() throws Exception {
+
+    }
+
+    @Test
+    public void budget() throws Exception {
 
 
+     }
+
+    @Test
+    public void sms() throws Exception {
+            
+    }
+
+    @Test
+    public void table() throws Exception {
+            
+    }
+
+    @Test
+    public void gift() throws Exception {
+            
+    }
+
+    @Test
+    public void greeting() throws Exception {
+    
+        
+        }
 }

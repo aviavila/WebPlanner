@@ -7,6 +7,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.jupiter.api.Order;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -61,6 +62,45 @@ public class upToolBar {
 
     }
 
+
+    @Test
+    public void writeReview () throws Exception {
+        driver.findElement(By.className("myWeddingIcons")).click();
+
+
+
+    }
+
+    @Test
+    public void showMakolLeiruaPopup() throws Exception {
+        driver.findElement(By.className("missonsicon")).click();
+    }
+
+    @Test
+    public void showSapakimPopup() throws Exception {
+
+    }
+
+    @Test
+    public void showWedappPopup() throws Exception {
+
+
+    }
+
+    @Test
+    public void wedappHeaderLinks() throws Exception {
+
+    }
+
+    @Test
+    public void wedblog() throws Exception {
+
+    }
+
+    @Test
+    public void showExtraLinksHover() throws Exception {
+
+    }
 
 
 }
