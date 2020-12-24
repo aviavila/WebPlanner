@@ -41,27 +41,33 @@ public class AsigningPage {
         extent.flush();
         driver.quit();
     }
-//צריך להפוך את הלוגאין לעובד
+//צריך להפוך את הלוגאין נתקעת בלחצן אחריי המייל
 
     @Test
     @Order(1)
     public void signing() throws Exception {
 
 //להרשם בדף הרשמה לפי מייל
-        driver.findElement(xpath("//a[contains(@class,'wedappReg wow')]")).click();
-        Thread.sleep(2000);
-        driver.switchTo().frame("//*[@id=\"ngConnect\"]").findElement(xpath("/html/body/app-root/app-login/div[1]/span/span")).click();
+        driver.get("https://www.mit4mit.co.il/login/main/?last_page=/wedapp/?open=true");
         Thread.sleep(3000);
-        driver.findElement(className("userEmail")).sendKeys("GHFGGF@GMAIL.COM");
+        driver.switchTo().frame(driver.findElement(By.id("ngConnect")));
+        WebElement mail = driver.findElement(By.className("emailToggle"));
+                   mail.click();
+        Thread.sleep(1000);
+        WebElement mail2 = driver.findElement(By.name("userEmail"));
+                   mail2.sendKeys("aadfdfa@fadf.com");
         Thread.sleep(3000);
-        driver.findElement(xpath(" //*[@id=\"3\"]")).click();
+        driver.switchTo().frame(driver.findElement(By.id("ngConnect")));
+        WebElement mail3 = driver.findElement(By.id("3"));
+                   mail3.click();
+        driver.switchTo().frame(driver.findElement(By.id("ngConnect")));
+        driver.findElement(By.name("userEmail")).sendKeys("1965161561");
         Thread.sleep(3000);
-        driver.findElement(xpath("//*[@id=\"userpassword\"]")).sendKeys("1965161561");
-        Thread.sleep(3000);
-        driver.findElement(xpath(" //*[@id=\"3\"]")).click();
+        WebElement mail4 = driver.findElement(By.id("3"));
+                   mail4.click();
         Thread.sleep(3000);
 
-        driver.findElement(xpath("  /html/body/app-root/app-completed/div[1]/button")).click();
+        driver.findElement(xpath("/html/body/app-root/app-completed/div[1]/button")).click();
         Thread.sleep(3000);
 
 
