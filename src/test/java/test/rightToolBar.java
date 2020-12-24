@@ -39,7 +39,9 @@ public class rightToolBar {
             extent.flush();
             driver.quit();
         }
-        @Test
+    //צריך להפוך את הלוגאין לעובד
+
+    @Test
         @Order(1)
         public void signing() throws Exception {
 

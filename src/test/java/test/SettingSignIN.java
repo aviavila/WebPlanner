@@ -36,6 +36,7 @@ public class SettingSignIN {
         extent.flush();
         driver.quit();
     }
+//צריך להפוך את הלוגאין לעובד
 
     @Test
     @Order(1)

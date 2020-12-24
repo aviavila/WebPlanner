@@ -41,6 +41,7 @@ public class AsigningPage {
         extent.flush();
         driver.quit();
     }
+//צריך להפוך את הלוגאין לעובד
 
     @Test
     @Order(1)
@@ -82,7 +83,7 @@ public class AsigningPage {
         if (driver.getClass().equals("מה עושים עכשיו? ")) {
             ttb.pass("test 1 - sign up successful", MediaEntityBuilder.createScreenCaptureFromPath(rf.CaptureScreen(driver)).build());
         } else {
-            ttb.fail("test 1 -cant sign up the couple name's", MediaEntityBuilder.createScreenCaptureFromPath(rf.CaptureScreen(driver)).build());
+            ttb.fail(new RuntimeException("A runtime exception occurred!"));
         }
         }
 
