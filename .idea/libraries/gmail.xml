@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="gmail">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/../אוטומציה 210120/files/jar/gmail" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../אוטומציה 210120/files/jar/gmail/dsn.jar!/" />
+    </SOURCES>
+    <jarDirectory url="file://$PROJECT_DIR$/../אוטומציה 210120/files/jar/gmail" recursive="false" />
+  </library>
+</component>

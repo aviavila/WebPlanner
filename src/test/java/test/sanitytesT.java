@@ -39,15 +39,15 @@ public class sanitytesT {
     }
 
     @Test
-    public void test1() throws Exception {
-        //זיהוי של הלוגו
-        WebElement logo = driver.findElement(By.xpath("//div[@class='fullWidthHeader']//img[@alt='mit4mit']"));
-        logo.click();
+    public void sanity() throws Exception {
+
+        WebElement home = driver.findElement(By.xpath("//div[@class='fullWidthHeader']//img[@alt='mit4mit']"));
+        home.click();
 
         if (driver.getTitle().equals("מתחתנים למען מתחתנים - חוות דעת והמלצות אמיתיות")) {
-            ttb.pass("test 1 - logo of the site");
+            ttb.pass("test 1 - home page", MediaEntityBuilder.createScreenCaptureFromPath(rf.CaptureScreen(driver)).build());
         } else {
-            ttb.fail("test 1 - logo of the site", MediaEntityBuilder.createScreenCaptureFromPath(rf.CaptureScreen(driver)).build());
+            ttb.fail("test 1 - cant open", MediaEntityBuilder.createScreenCaptureFromPath(rf.CaptureScreen(driver)).build());
         }
 
     }

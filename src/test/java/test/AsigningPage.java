@@ -2,18 +2,23 @@ package test;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.MediaEntityBuilder;
+import com.aventstack.extentreports.markuputils.MarkupHelper;
+import com.paulhammant.ngwebdriver.ByAngular;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import lombok.var;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.jupiter.api.Order;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import static org.openqa.selenium.By.className;
-import static org.openqa.selenium.By.xpath;
+import static org.openqa.selenium.By.*;
 
-public class upToolBar {
+public class AsigningPage {
 
     static WebDriver driver;
     public reportFanction rf = new reportFanction(driver);
@@ -24,11 +29,11 @@ public class upToolBar {
     public void setUp() throws Exception {
 
         extent = rf.GetExtent();
-        ttb = rf.createTest("upToolBar", "upToolBar");
+        ttb = rf.createTest("signingPage", "signingPage");
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.get("https://wedapp.mit4mit.co.il/home");
+        driver.get("https://www.mit4mit.co.il/wedapp/");
     }
 
     @After
@@ -61,6 +66,24 @@ public class upToolBar {
 
     }
 
+    @Test
+    @Order(2)
+    public void signup() throws Exception {
 
+            driver.switchTo().frame(driver.findElement(By.name("1")));
+
+            driver.findElement(By.xpath("//*[@id=\"BrideName\"]")).click();
+            driver.findElement(By.id("BrideName")).sendKeys("יוכבד");
+            driver.findElement(By.xpath(" //*[@id=\"GroomName\"]")).click();
+            driver.findElement(By.id("GroomName")).sendKeys("נבוכדנצר");
+            driver.findElement(By.className("unknownWeddingDate")).click();
+            driver.findElement(By.id("addNewUSER")).click();
+            driver.findElement(tagName("button")).click();
+        if (driver.getClass().equals("מה עושים עכשיו? ")) {
+            ttb.pass("test 1 - sign up successful", MediaEntityBuilder.createScreenCaptureFromPath(rf.CaptureScreen(driver)).build());
+        } else {
+            ttb.fail("test 1 -cant sign up the couple name's", MediaEntityBuilder.createScreenCaptureFromPath(rf.CaptureScreen(driver)).build());
+        }
+        }
 
 }
